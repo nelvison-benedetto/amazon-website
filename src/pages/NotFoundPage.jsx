@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import StarParticles from "../components/StarParticles";
+import StarParticles from "../components/StarParticles/StarParticles";
 
 export default function NotFoundPage(){
     return (

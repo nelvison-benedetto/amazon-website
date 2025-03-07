@@ -1,0 +1,56 @@
+.amazon-btn {
+    all: unset; /* Rimuove tutti gli stili di default del <button> */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom,  
+                #ffe6b3 0%,    /* 10% più chiaro sopra */
+                #ffcf85 20%,   /* 5% più chiaro */
+                #febd69 50%,   /* Colore principale */
+                #e6a04d 80%,   /* 5% più chiaro sotto */
+                #d88e3a 100%); /* 10% più chiaro sotto */
+    
+    border: 1px solid #696969; /* Bordo nero/grigio classico */
+    color: #111;
+    font-weight: normal;
+    font-size: 16px;
+    padding: 0.4rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    /* width: 210px;
+    height: 45px; */
+    
+    /* Effetto rilievo interno migliorato senza ombra sul bordo superiore */
+    box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 0.2), /* Ombra in basso */
+                inset 0px -2px 4px rgba(255, 255, 255, 0.2), /* Luce dal basso */
+                1px 1px 2px rgba(12, 12, 12, 0.4); /* Bordo esterno scuro */
+    
+    transition: all 0.2s ease-in-out;
+}
+
+.amazon-btn:hover {
+    background: linear-gradient(to bottom,  
+                #fff0c2 0%,  
+                #ffd699 20%,  
+                #ffcc80 50%,  
+                #e6a04d 80%,  
+                #d88e3a 100%);
+}
+
+.amazon-btn:active {
+    background: linear-gradient(to bottom,  
+                #e6a04d 0%,  
+                #d88e3a 20%,  
+                #c47c2b 50%,  
+                #b06b23 80%,  
+                #9c5a1b 100%);
+    
+    /* Simula pressione abbassando il rilievo */
+    box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.4), 
+                inset 0px -3px 6px rgba(255, 255, 255, 0.4),
+                1px 1px 2px rgba(0, 0, 0, 0.5); /* Bordo esterno più evidente */
+    
+    transform: translateY(1px);
+}

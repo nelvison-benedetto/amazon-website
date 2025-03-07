@@ -17,7 +17,7 @@ export default function AppHeader(){
                 <span>Flag</span>
                 <NavLink to='/contact' className='text-decoration-none text-white d-flex flex-column'>Hello, X<strong>Account & Lists</strong></NavLink>
                 <NavLink to='/contact' className='text-decoration-none text-white d-flex flex-column'>Returns <strong>& Orders</strong></NavLink>
-                <NavLink to='/signin' className='text-decoration-none text-white'><strong>Sign In</strong></NavLink>
+                <NavLink to='/auth' className='text-decoration-none text-white'><strong>Sign In</strong></NavLink>
             </div>
         </header>
     );
