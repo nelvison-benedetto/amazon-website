@@ -14,10 +14,11 @@ import {
     setDoc
 } from 'firebase/firestore'
 
-
+const vite_apikey = import.meta.env.VITE_APIKEY;
+// apiKey: "AIzaSyBqoPybTG3cVKUnk2TIWSluo93t0zI49ic",
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBqoPybTG3cVKUnk2TIWSluo93t0zI49ic",
+    apiKey: vite_apikey,
     authDomain: "react-prj1-db.firebaseapp.com",
     projectId: "react-prj1-db",
     storageBucket: "react-prj1-db.firebasestorage.app",
