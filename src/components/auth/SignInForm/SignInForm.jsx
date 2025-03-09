@@ -1,15 +1,18 @@
 
 import InputForm from "../../InputForm/InputForm";
-import { useState } from "react";
+import { useState , useContext } from "react";
 import { 
     signInWithGooglePopup,
     createUserDocumentFromAuth,
     signInAuthUserWithEmailAndPassword
  } from "../../../utils/firebase/firebase";
-import ButtonAmazon from "../../buttons/ButtonAmazon";
-
+import ButtonAmazon from "../../Buttons/ButtonAmazon";
+import { GlobalContext } from "../../../contexts/GlobalProvider";
 
 export default function SignInForm(){
+
+    const{ authState }=useContext(GlobalContext);
+    const { currentUser, setCurrentUser } = authState;
 
     const initialFormFields={
             email: '',
@@ -27,8 +30,9 @@ export default function SignInForm(){
     const handleSubmit = async(e) =>{
         e.preventDefault();
         try{
-            const response = await signInAuthUserWithEmailAndPassword(email, password);
-            console.log(response);
+            const {user} = await signInAuthUserWithEmailAndPassword(email, password);
+            //console.log(user);
+            //setCurrentUser(user);  used before using onAuthStateChanged of firebase 
             resetFormFields();
 
         } catch (error) {

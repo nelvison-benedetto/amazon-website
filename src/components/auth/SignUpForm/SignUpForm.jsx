@@ -1,13 +1,17 @@
-import { useState } from "react";
+import { useState,useContext } from "react";
 import { 
     createAuthUserWithEmailAndPassword, 
     createUserDocumentFromAuth, 
     signInAuthUserWithEmailAndPassword,
 } from "../../../utils/firebase/firebase";
 import InputForm from "../../InputForm/InputForm";
-import ButtonAmazon from "../../buttons/ButtonAmazon";
+import ButtonAmazon from "../../Buttons/ButtonAmazon";
+import { GlobalContext } from "../../../contexts/GlobalProvider";
 
 export default function SignUpForm(){
+
+    const {authState} = useContext(GlobalContext);
+    const {currentUser, setCurrentUser} = authState;
 
     const initialFormFields={
         displayName: '',
@@ -30,9 +34,10 @@ export default function SignUpForm(){
                 email, 
                 password
             );
+            //setCurrentUser(user);  used before using onAuthStateChanged of firebase 
             await createUserDocumentFromAuth(user, {displayName});
-            const response = await signInAuthUserWithEmailAndPassword(email,password);
-            console.log(response);
+            //const response = await signInAuthUserWithEmailAndPassword(email,password);
+            //console.log(response);
             resetFormFields();
 
         }catch(error){ 

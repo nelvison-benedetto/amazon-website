@@ -12,7 +12,8 @@ import SignInForm from '../components/auth/SignInForm/SignInForm';
 
 export default function AuthPage(){
 
-////  Login with Redirect doesn't add new User on firebase!!
+    //DONT'T DELETE!
+////  Login with Redirect doesn't add new User on firebase!!   
     // useEffect(() => {
     //     const fetchRedirectResult = async () => {  //correct method x use async within useEffect()
     //         try {
