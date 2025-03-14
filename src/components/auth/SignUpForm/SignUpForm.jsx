@@ -30,21 +30,15 @@ export default function SignUpForm(){
             return;
         }
         try{
-            const {user} = await createAuthUserWithEmailAndPassword(
-                email, 
-                password
-            );
-            //setCurrentUser(user);  used before using onAuthStateChanged of firebase 
-            await createUserDocumentFromAuth(user, {displayName});
-            //const response = await signInAuthUserWithEmailAndPassword(email,password);
-            //console.log(response);
+            //console.log(displayName);
+            const {user} = await createAuthUserWithEmailAndPassword(email, password,  displayName);  //extract only 'user' from the returned obj
+            await createUserDocumentFromAuth(user, {'displayName':displayName});
             resetFormFields();
 
         }catch(error){ 
             if(error.code === 'auth/email-already-in-use'){
                 alert('Cannot create user, email already in use');
-            }else{console.log('user creation encountered an error', error);}
-            
+            } else{ console.log('user creation encountered an error', error); }
         }
     }
 
