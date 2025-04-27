@@ -6,10 +6,13 @@
 .debug *{border: 1px black dashed;}
 .debugwhite *{border: 1px white dashed;}
 
-:root{
+body{
   font-family: Helvetica, Inter, system-ui, Avenir, Arial, sans-serif;
   font-size: 0.8rem;
   line-height: 0.8rem;
+}
+
+:root{
   --blue1: #131921;
   --blue2: #232f3e;
   --yellow1: #febd69;

@@ -6,7 +6,7 @@ export default function Layout(){
     return(
         <>
             <AppHeader/>
-            <main className='debug'>
+            <main className=''>
                 <Outlet/>
             </main>
             <AppFooter/>

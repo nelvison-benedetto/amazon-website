@@ -15,7 +15,7 @@ export default function AppHeader(){
     // };
 
     return(
-        <header className='debugwhite' style={{backgroundColor:'var(--blue1)', color:'white'}}>
+        <header className='' style={{backgroundColor:'var(--blue1)', color:'white'}}>
 
             <NavBar/>
             {/* <div className="d-flex sticky-top justify-content-between p-2">
